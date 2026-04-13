@@ -9,7 +9,7 @@ Ejercicio 1: Creación y actualización de repositorios
             git config --global user.name "CsarApps"
             git config --global user.email "csar.apps@gmail.com"
 
-    2.-Creación repositorio 43GIIN_CVS en local y GitHub:
+    2.-Creación repositorio 43GIIN_CVS en local y GitHub
         En terminal:
             mkdir 43GIIN_CVS
             cd 43GIIN_CVS
@@ -18,7 +18,7 @@ Ejercicio 1: Creación y actualización de repositorios
         Mensaje:
             Initialized empty Git repository in /Users/cesarherreros/43GIIN_CVS/.git/
 
-    3.-Comprobación de estado en terminal:
+    3.-Comprobación de estado en terminal
             git status
         Mensaje:
             On branch master
@@ -27,7 +27,7 @@ Ejercicio 1: Creación y actualización de repositorios
 
             nothing to commit (create/copy files and use "git add" to track)
 
-    4.-Creación de fichero y subida a repositorio:
+    4.-Creación de fichero y subida a repositorio
         Archivo creado: log_Actividad.txt
         En terminal:
             git add log_Actividad.txt
@@ -50,7 +50,7 @@ Ejercicio 1: Creación y actualización de repositorios
              * [new branch]      master -> master
             branch 'master' set up to track 'origin/master'.
 
-    5.-Modificación de fichero y subida a repositorio:
+    5.-Modificación de fichero y subida a repositorio
         En terminal (después de modificar):
             git add log_Actividad.txt
             git commit -m "Paso 5: Modificación de fichero"
@@ -72,7 +72,7 @@ Ejercicio 1: Creación y actualización de repositorios
                5d3106f..a8f45a3  master -> master
             branch 'master' set up to track 'origin/master'.
 
-    6.-Visualización de cambios respecto a la versión anterior y su autor:
+    6.-Visualización de cambios respecto a la versión anterior y su autor
         En terminal:
             git log -p -1
         Mensaje:
@@ -100,7 +100,7 @@ Ejercicio 1: Creación y actualización de repositorios
             +
             \ No newline at end of file
 
-    7.-Modificación del comentario del último commit:
+    7.-Modificación del comentario del último commit
         En terminal:
             git commit --amend -m "Paso 6: Visualización de cambios y autor de los mismos"
         Mensaje:
@@ -130,5 +130,63 @@ Ejercicio 2: Revertir cambios
         En terminal (después de modificar archivo):
             git status
         Mensaje:
+            On branch master
+            Your branch is up to date with 'origin/master'.
+
+            Changes not staged for commit:
+              (use "git add <file>..." to update what will be committed)
+              (use "git restore <file>..." to discard changes in working directory)
+                    modified:   log_Actividad.txt
+
+            no changes added to commit (use "git add" and/or "git commit -a")
+
+    2.-Deshacer cambios y comprobar estado
+        En terminal:
+            git restore log_Actividad.txt
+            git status
+        Mensaje:
+            On branch master
+            Your branch is up to date with 'origin/master'.
+
+            nothing to commit, working tree clean
 
 
+Ejercicio 3: Gestión de ramas
+
+    1.-Creación de fichero
+        Archivo creado: ramas.txt
+
+    2.-Creación de rama nueva y cambio a ella para trabajar
+        En terminal:
+            git checkout -b nueva_rama
+        Mensaje:
+            Switched to a new branch 'nueva_rama'
+
+    3.-Visualización de ramas en local y remoto
+        En terminal:
+            git branch -a
+        Mensaje:
+              master
+            * nueva_rama
+              remotes/origin/master
+
+    4 y 5.-Modificación del archivo, añadirlo a la zona de intercambio temporal y commit
+        En terminal (después de modificar):
+            git add ramas.txt
+            git commit -m "Cambios desde rama nueva"
+        Mensaje:
+            [nueva_rama 0395d56] Cambios desde rama nueva
+             1 file changed, 4 insertions(+)
+             create mode 100644 ramas.txt
+
+    6.-Cambio a la rama master
+        En terminal:
+            git checkout master
+            git status
+        Mensaje:
+
+    4 y 5.-Modificación del archivo, añadirlo a la zona de intercambio temporal y commit
+        En terminal (después de modificar):
+            git add ramas.txt
+            git commit -m "Cambios desde rama nueva"
+        Mensaje:
