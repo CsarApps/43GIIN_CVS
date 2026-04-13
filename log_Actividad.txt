@@ -1,0 +1,48 @@
+DOCUMENTACIÓN Y REGISTRO DE LOS PASOS REALIZADOS EN LA ACTIVIDAD
+Ejercicio 1: Creación y actualización de repositorios
+
+    1.-Configurar GitHub
+        Nombre de usuario: CsarApps
+        Mail: csar.apps@gmail.com
+
+    2.-Creación repositorio 43GIIN_GitHub en GitHub:
+        En terminal:
+            mkdir 43GIIN_CVS
+            cd 43GIIN_CVS
+            git init
+            git remote add origin https://github.com/CsarApps/43GIIN_CVS.git
+        Mensaje:
+            Initialized empty Git repository in /Users/cesarherreros/43GIIN_CVS/.git/
+    
+    3.-Comprobación de estado en terminal:
+            git status
+        Mensaje:
+            On branch master
+
+            No commits yet
+
+            nothing to commit (create/copy files and use "git add" to track)
+
+    4.-Creación de fichero y subida a repositorio:
+        Archivo creado: log_Actividad.txt
+        En terminal:
+            git add log_Actividad.txt
+            git commit -m "Primera subida inicial a GitHub"
+        Mensaje:
+            [master (root-commit) bc78962] Primera subida inicial a GitHub
+             1 file changed, 32 insertions(+)
+             create mode 100644 log_actividad.txt
+        Subida al repositorio
+        En terminal:
+            git push -u origin master
+        Mensaje:
+            Enumerating objects: 5, done.
+            Counting objects: 100% (5/5), done.
+            Delta compression using up to 4 threads
+            Compressing objects: 100% (2/2), done.
+            Writing objects: 100% (3/3), 543 bytes | 543.00 KiB/s, done.
+            Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+            remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+            To https://github.com/CsarApps/43GIIN_CVS.git
+               bc78962..0114507  master -> master
+               branch 'master' set up to track 'origin/master'.
