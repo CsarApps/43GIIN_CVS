@@ -1,4 +1,5 @@
 DOCUMENTACIÓN Y REGISTRO DE LOS PASOS REALIZADOS EN LA ACTIVIDAD
+
 Ejercicio 1: Creación y actualización de repositorios
 
     1.-Configuración
@@ -116,4 +117,18 @@ Ejercicio 1: Creación y actualización de repositorios
         En terminal:
             git log --oneline --graph --all
         Mensaje:
-            
+            * a6fa00c (HEAD -> master, origin/master) Último paso del ejercicio 1
+            * 8ed11b7 Paso 6: Visualización de cambios
+            * 6dbd4fa Paso 5: Modificación de fichero
+            * a8f45a3 Paso 5: Modificación de fichero
+            * 5d3106f Primera subida inicial
+
+
+Ejercicio 2: Revertir cambios
+
+    1.-Actualizar y comprobar status
+        En terminal (después de modificar archivo):
+            git status
+        Mensaje:
+
+
