@@ -70,4 +70,9 @@ Ejercicio 1: Creación y actualización de repositorios
             To https://github.com/CsarApps/43GIIN_CVS.git
                5d3106f..a8f45a3  master -> master
             branch 'master' set up to track 'origin/master'.
-   
+
+    6.-Visualización de cambios respecto a la versión anterior y su autor:
+        En terminal (después de modificar):
+            git log -p -1
+        Mensaje:
+        
