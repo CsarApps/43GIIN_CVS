@@ -1,9 +1,12 @@
 DOCUMENTACIÓN Y REGISTRO DE LOS PASOS REALIZADOS EN LA ACTIVIDAD
 Ejercicio 1: Creación y actualización de repositorios
 
-    1.-Configurar GitHub
+    1.-Configuración
         Nombre de usuario: CsarApps
         Mail: csar.apps@gmail.com
+        En terminal:
+            git config --global user.name "CsarApps"
+            git config --global user.email "csar.apps@gmail.com"
 
     2.-Creación repositorio 43GIIN_CVS en local y GitHub:
         En terminal:
@@ -48,11 +51,11 @@ Ejercicio 1: Creación y actualización de repositorios
 
     5.-Modificación de fichero y subida a repositorio:
         En terminal (después de modificar):
+            git add log_Actividad.txt
             git commit -m "Paso 5: Modificación de fichero"
         Mensaje:
-            [master (root-commit) bc78962] Primera subida inicial a GitHub
-             1 file changed, 32 insertions(+)
-             create mode 100644 log_actividad.txt
+            [master a8f45a3] Paso 5: Modificación de fichero
+             1 file changed, 25 insertions(+), 4 deletions(-)
 
         En terminal (Subida al repositorio):
             git push -u origin master
@@ -61,9 +64,10 @@ Ejercicio 1: Creación y actualización de repositorios
             Counting objects: 100% (5/5), done.
             Delta compression using up to 4 threads
             Compressing objects: 100% (2/2), done.
-            Writing objects: 100% (3/3), 543 bytes | 543.00 KiB/s, done.
+            Writing objects: 100% (3/3), 546 bytes | 546.00 KiB/s, done.
             Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
             remote: Resolving deltas: 100% (1/1), completed with 1 local object.
             To https://github.com/CsarApps/43GIIN_CVS.git
-               bc78962..0114507  master -> master
-               branch 'master' set up to track 'origin/master'.
+               5d3106f..a8f45a3  master -> master
+            branch 'master' set up to track 'origin/master'.
+   
