@@ -16,7 +16,7 @@ Ejercicio 1: Creación y actualización de repositorios
             git remote add origin https://github.com/CsarApps/43GIIN_CVS.git
         Mensaje:
             Initialized empty Git repository in /Users/cesarherreros/43GIIN_CVS/.git/
-    
+
     3.-Comprobación de estado en terminal:
             git status
         Mensaje:
@@ -35,7 +35,7 @@ Ejercicio 1: Creación y actualización de repositorios
             [master (root-commit) 5d3106f] Primera subida inicial
              1 file changed, 48 insertions(+)
              create mode 100644 log_Actividad.txt
-        
+
         En terminal (Subida al repositorio):
             git push -u origin master
         Mensaje:
@@ -72,7 +72,48 @@ Ejercicio 1: Creación y actualización de repositorios
             branch 'master' set up to track 'origin/master'.
 
     6.-Visualización de cambios respecto a la versión anterior y su autor:
-        En terminal (después de modificar):
+        En terminal:
             git log -p -1
         Mensaje:
+            commit 8ed11b7eb5c051e6b89b11a2fc80888de323b47a (HEAD -> master, origin/master)
+            Author: CsarApps <csar.apps@gmail.com>
+            Date:   Mon Apr 13 19:06:12 2026 +0200
+
+                Paso 6: Visualización de cambios
+
+            diff --git a/log_Actividad.txt b/log_Actividad.txt
+            index 5866751..c088fdd 100644
+            --- a/log_Actividad.txt
+            +++ b/log_Actividad.txt
+            @@ -70,4 +70,9 @@ Ejercicio 1: Creación y actualización de repositorios
+                         To https://github.com/CsarApps/43GIIN_CVS.git
+                            5d3106f..a8f45a3  master -> master
+                         branch 'master' set up to track 'origin/master'.
+            -
+            \ No newline at end of file
+            +
+            +    6.-Visualización de cambios respecto a la versión anterior y su autor:
+            +        En terminal (después de modificar):
+            +            git log -p -1
+            +        Mensaje:
+            +
+            \ No newline at end of file
+
+    7.-Modificación del comentario del último commit:
+        En terminal:
+            git commit --amend -m "Paso 6: Visualización de cambios y autor de los mismos"
+        Mensaje:
+            [master b90d041] Paso 6: Visualización de cambios y autor de los mismos
+             Date: Mon Apr 13 19:06:12 2026 +0200
+             1 file changed, 6 insertions(+), 1 deletion(-)
         
+        En terminal (comprobación):
+            git log --oneline -1
+        Mensaje:
+            b90d041 (HEAD -> master) Paso 6: Visualización de cambios y autor de los mismos
+    
+    8.-Visualización de los últimos cambios
+        En terminal:
+            git log --oneline --graph --all
+        Mensaje:
+            
