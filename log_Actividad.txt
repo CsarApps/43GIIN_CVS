@@ -311,3 +311,8 @@ Ejercicio 5: Pull-requests
         1.2.-Aprobación con "Merge pull request" --> "Confirm merge"
 
         2.-Comprobación en la rama master de los cambios (aparece fichero nueva_rama.txt)
+
+
+Ejercicio 6:
+
+    Al realizar esta actividad de manera individual, el informde de contribuciones no se ha realizado.
