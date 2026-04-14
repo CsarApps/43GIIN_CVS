@@ -175,18 +175,139 @@ Ejercicio 3: Gestión de ramas
             git add ramas.txt
             git commit -m "Cambios desde rama nueva"
         Mensaje:
-            [nueva_rama 0395d56] Cambios desde rama nueva
-             1 file changed, 4 insertions(+)
-             create mode 100644 ramas.txt
+            [nueva_rama 4a1d500] Cambios desde rama nueva
+             1 file changed, 1 insertion(+)
 
     6.-Cambio a la rama master
         En terminal:
             git checkout master
-            git status
         Mensaje:
+            M       log_Actividad.txt
+            Switched to branch 'master'
+            Your branch is ahead of 'origin/master' by 2 commits.
+            (use "git push" to publish your local commits)
 
-    4 y 5.-Modificación del archivo, añadirlo a la zona de intercambio temporal y commit
+    7 y 8.-Modificación del archivo, añadirlo a la zona de intercambio temporal y commit
         En terminal (después de modificar):
             git add ramas.txt
-            git commit -m "Cambios desde rama nueva"
+            git commit -m "Cambios desde rama master"
         Mensaje:
+            [master 06c9d82] Cambios desde rama master
+            1 file changed, 1 insertion(+)
+
+    9.-Fusión de ramas
+        En terminal (en la rama master):
+            git merge nueva_rama
+        Mensaje:
+            Auto-merging ramas.txt
+            CONFLICT (content): Merge conflict in ramas.txt
+            Automatic merge failed; fix conflicts and then commit the result.
+        Archivo ramas.txt (visualización en VIsual Studio Code):
+            Accept Current Change | Accept Incoming Change | Accept Both Changes | Compare Changes
+            <<<<<<< HEAD (Current Change)
+            Contenido de la rama master
+            =======
+            Modificación realizada desde nueva rama
+            >>>>>>> nueva_rama (Incoming Change)
+
+    10.-Resolución de conflictos de forma manual
+        En archivo ramas.txt se deja el texto resultante como se quiera y se guarda el archivo.
+
+    11.-Finalización de fusión: Modificación del archivo, añadirlo a la zona de intercambio temporal y commit
+        En terminal (después de modificar y guardar archivo):
+            git add ramas.txt
+            git commit -m "Paso 11: Finalizando fusión"
+        Mensaje:
+            [master 930f147] Paso 11: Finalizando fusión
+
+    12.-Visualización de histórico de repositorio (todas las ramas)
+        En terminal:
+            git log --oneline --graph --all
+        Mensaje:
+            *   930f147 (HEAD -> master) Paso 11: Finalizando fusión
+            |\
+            | * 4a1d500 (nueva_rama) Cambios desde rama nueva
+            * | 06c9d82 Cambios desde rama master
+            |/
+            * 6b2ae9c Antes de hacer nueva rama
+            * 52365af Antes de hacer nueva rama
+            * d3cd63e (origin/nueva_rama, origin/master) Ejercicio 2: Antes de modificar con error
+            * a6fa00c Último paso del ejercicio 1
+            * 8ed11b7 Paso 6: Visualización de cambios
+            * 6dbd4fa Paso 5: Modificación de fichero
+            * a8f45a3 Paso 5: Modificación de fichero
+            * 5d3106f Primera subida inicial
+
+
+Ejercicio 4: Repositorio remoto (https://github.com/CsarApps/43GIIN_CVS.git)
+
+    1.-Comprobación de cambios en GitHub
+        En terminal (sincronización con GitHub):
+            git push origin master
+        Mensaje:
+            Enumerating objects: 22, done.
+            Counting objects: 100% (22/22), done.
+            Delta compression using up to 4 threads
+            Compressing objects: 100% (18/18), done.
+            Writing objects: 100% (20/20), 3.19 KiB | 408.00 KiB/s, done.
+            Total 20 (delta 5), reused 0 (delta 0), pack-reused 0 (from 0)
+            remote: Resolving deltas: 100% (5/5), completed with 1 local object.
+            To https://github.com/CsarApps/43GIIN_CVS.git
+            d3cd63e..1967ebb  master -> master
+
+    2.-Creación de nueva rama
+        En terminal:
+            git checkout nueva_rama
+        Mensaje:
+            Switched to branch 'nueva_rama'
+
+        En terminal:
+            git push -u origin nueva_rama
+        Mensaje:
+            Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+            remote: 
+            remote: Create a pull request for 'nueva_rama' on GitHub by visiting:
+            remote:      https://github.com/CsarApps/43GIIN_CVS/pull/new/nueva_rama
+            remote: 
+            To https://github.com/CsarApps/43GIIN_CVS.git
+            * [new branch]      nueva_rama -> nueva_rama
+            branch 'nueva_rama' set up to track 'origin/nueva_rama'.
+
+    3.-Creación de fichero a la nueva rama
+        En terminal (después de crear fichero nueva_rama.txt):
+            git add nueva_rama.txt
+            git commit -m "Fichero añadido en la rama"
+        Mensaje:
+            [nueva_rama 1d3c8be] Fichero añadido en la rama
+            1 file changed, 1 insertion(+)
+            create mode 100644 nueva_rama.txt
+
+    4.-Push y comprobar su creación en repositorio remoto
+        En terminal:
+            git push origin nueva_rama
+        Mensaje:
+            Enumerating objects: 4, done.
+            Counting objects: 100% (4/4), done.
+            Delta compression using up to 4 threads
+            Compressing objects: 100% (2/2), done.
+            Writing objects: 100% (3/3), 370 bytes | 370.00 KiB/s, done.
+            Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+            To https://github.com/CsarApps/43GIIN_CVS.git
+            4a1d500..1d3c8be  nueva_rama -> nueva_rama
+
+        En terminal:
+            git branch -a
+        Mensaje:
+            master
+          * nueva_rama
+            remotes/origin/master
+            remotes/origin/nueva_rama
+
+
+Ejercicio 5: Pull-requests
+
+    Como este ejercicio se realiza en GitHub, documento explicación de los pasos realizados:
+        1.1.-Creación de pull-request a partir del botón "Compare & pull request", indicando base: master y compare: nueva_rama, con título "Ejercicio 5: Pull-requests". Se confirma la creación con el botón "Create pull request"
+        1.2.-Aprobación con "Merge pull request" --> "Confirm merge"
+
+        2.-Comprobación en la rama master de los cambios (aparece fichero nueva_rama.txt)
