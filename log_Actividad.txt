@@ -175,18 +175,48 @@ Ejercicio 3: Gestión de ramas
             git add ramas.txt
             git commit -m "Cambios desde rama nueva"
         Mensaje:
-            [nueva_rama 0395d56] Cambios desde rama nueva
-             1 file changed, 4 insertions(+)
-             create mode 100644 ramas.txt
+            [nueva_rama 4a1d500] Cambios desde rama nueva
+             1 file changed, 1 insertion(+)
 
     6.-Cambio a la rama master
         En terminal:
             git checkout master
-            git status
         Mensaje:
+            M       log_Actividad.txt
+            Switched to branch 'master'
+            Your branch is ahead of 'origin/master' by 2 commits.
+            (use "git push" to publish your local commits)
 
-    4 y 5.-Modificación del archivo, añadirlo a la zona de intercambio temporal y commit
+    7 y 8.-Modificación del archivo, añadirlo a la zona de intercambio temporal y commit
         En terminal (después de modificar):
             git add ramas.txt
-            git commit -m "Cambios desde rama nueva"
+            git commit -m "Cambios desde rama master"
         Mensaje:
+            [master 06c9d82] Cambios desde rama master
+            1 file changed, 1 insertion(+)
+
+    9.-Fusión de ramas
+        En terminal (en la rama master):
+            git merge nueva_rama
+        Mensaje:
+            Auto-merging ramas.txt
+            CONFLICT (content): Merge conflict in ramas.txt
+            Automatic merge failed; fix conflicts and then commit the result.
+        Archivo ramas.txt (visualización en VIsual Studio Code):
+            Accept Current Change | Accept Incoming Change | Accept Both Changes | Compare Changes
+            <<<<<<< HEAD (Current Change)
+            Contenido de la rama master
+            =======
+            Modificación realizada desde nueva rama
+            >>>>>>> nueva_rama (Incoming Change)
+
+    10.-Resolución de conflictos de forma manual
+        En archivo ramas.txt se deja el texto resultante como se quiera y se guarda el archivo.
+
+    11.-Finalización de fusión: Modificación del archivo, añadirlo a la zona de intercambio temporal y commit
+        En terminal (después de modificar y guardar archivo):
+            git add ramas.txt
+            git commit -m "Paso 11: Finalizando fusión"
+        Mensaje:
+            [master 06c9d82] Cambios desde rama master
+    
