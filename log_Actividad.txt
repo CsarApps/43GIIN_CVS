@@ -218,5 +218,31 @@ Ejercicio 3: Gestión de ramas
             git add ramas.txt
             git commit -m "Paso 11: Finalizando fusión"
         Mensaje:
-            [master 06c9d82] Cambios desde rama master
-    
+            [master 930f147] Paso 11: Finalizando fusión
+
+    12.-Visualización de histórico de repositorio (todas las ramas)
+        En terminal:
+            git log --oneline --graph --all
+        Mensaje:
+            *   930f147 (HEAD -> master) Paso 11: Finalizando fusión
+            |\
+            | * 4a1d500 (nueva_rama) Cambios desde rama nueva
+            * | 06c9d82 Cambios desde rama master
+            |/
+            * 6b2ae9c Antes de hacer nueva rama
+            * 52365af Antes de hacer nueva rama
+            * d3cd63e (origin/nueva_rama, origin/master) Ejercicio 2: Antes de modificar con error
+            * a6fa00c Último paso del ejercicio 1
+            * 8ed11b7 Paso 6: Visualización de cambios
+            * 6dbd4fa Paso 5: Modificación de fichero
+            * a8f45a3 Paso 5: Modificación de fichero
+            * 5d3106f Primera subida inicial
+
+
+Ejercicio 3: Repositorios remotos
+
+    1.-Comprobación de cambios en GitHub
+        En terminal (sincronización con GitHub):
+            git push origin master
+        Mensaje:
+        
